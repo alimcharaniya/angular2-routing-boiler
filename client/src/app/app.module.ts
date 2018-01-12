@@ -12,42 +12,34 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { environment } from '../environments/environment';
 
-import { ChatService } from './services/chat.service';
-import { BookingService } from './services/booking.service';
-import { AuthService } from './services/auth.service';
-
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './components/welcome/welcome.component';
-import { LoginComponent } from './components/login/login.component';
+import { AboutComponent } from './components/about-component/about-component.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { MentorsComponent } from './components/mentors/mentors.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FormsComponent } from './components/forms/forms.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { HomeComponent } from './components/home/home.component';
+import { MembersComponent } from './components/members/members.component';
 
 
-import { ChatComponent } from './components/bot/chat.component';
-import { ShopSettingsComponent } from './components/shop/settings/settings.component';
-import { AddBookingComponent } from './components/add-bookings/add-bookings.component';
-import { ViewBookingsComponent } from './components/view-bookings/view-bookings.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
-import { UserSettingsComponent } from './components/settings/user-settings.component';
-import { SetupBusinessComponent } from './components/setup-business/setup-business.component';
+
 
 export const firebaseConfig = {
-    apiKey: "AIzaSyBIZGG_U1xvqwO9h892zVhzbFZhqgZe1as",
-    authDomain: "donna-60361.firebaseapp.com",
-    databaseURL: "https://donna-60361.firebaseio.com",
-    storageBucket: "donna-60361.appspot.com",
-    messagingSenderId: "1070134236763"
+    //insert firebase credeints
 };
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    ChatComponent,
-    WelcomeComponent,
-    ViewBookingsComponent,
-    CalendarComponent,
-    AddBookingComponent,
-    UserSettingsComponent,
-    SetupBusinessComponent
+    TeamsComponent,
+    MentorsComponent,
+    ContactComponent,
+    AboutComponent,
+    FormsComponent,
+    ProjectsComponent,
+    HomeComponent,
+    MembersComponent,
   ],
   imports: [
     AlertModule.forRoot(),
@@ -58,18 +50,18 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     FormsModule,
     RouterModule.forRoot([
-      {path: '', component: WelcomeComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'donna', component: ChatComponent},
-      {path: 'view-bookings', component: ViewBookingsComponent},
-      {path: 'calendar', component: CalendarComponent},
-      {path: 'add-booking', component: AddBookingComponent},
-      {path: 'set-hours', component: UserSettingsComponent},
-      {path: 'setup-business', component: SetupBusinessComponent}
-
+      {path: '', component: HomeComponent},
+      {path: 'about', component: AboutComponent},
+      {path: 'contact', component: ContactComponent},
+      {path: 'forms', component: FormsComponent},
+      {path: 'members', component: MembersComponent},
+      {path: 'mentors', component: MentorsComponent},
+      {path: 'teams', component: TeamsComponent},
+      {path: 'projects', component: ProjectsComponent},
+      {path: 'contact', component: ContactComponent}
     ])
   ],
-  providers: [ChatService, BookingService, AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
